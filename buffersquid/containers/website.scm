@@ -13,7 +13,7 @@
     (locale "en_US.utf8")
     (bootloader (bootloader-configuration
                  (bootloader grub-bootloader)
-                 (target "/dev/null"))) ;; irrelevant for containers
+                 (targets '("/dev/null")))) ;; irrelevant for containers
     (file-systems
      (list (file-system
             (device "none")
