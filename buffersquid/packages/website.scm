@@ -1,4 +1,4 @@
-(define-module (packages website)
+(define-module (buffersquid packages website)
   #:use-module (guix packages)
   #:use-module (guix gexp)
   #:use-module (guix build-system copy)
@@ -10,7 +10,7 @@
   (package
     (name "website")
     (version "0.0")
-    (source (local-file "../src" #:recursive? #t))
+    (source (local-file "../../src" #:recursive? #t))
     (build-system copy-build-system)
     (synopsis "Simple static site")
     (description "A single-page static website")
