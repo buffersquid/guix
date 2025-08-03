@@ -4,6 +4,7 @@
   #:use-module (gnu services shepherd)
   #:use-module (gnu services web)
   #:use-module (gnu services certbot)
+  #:use-module (gnu services security)
   #:use-module (buffersquid packages website)
   #:export (website-base-services))
 
@@ -51,6 +52,7 @@
                    (domains (list %website-name))))))))
 
 (define website-base-services
-  (list website-deploy-service
+  (list (service fail2ban-service-type)
+        website-deploy-service
         website-nginx-service
         website-certification-service))

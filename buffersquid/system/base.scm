@@ -18,7 +18,6 @@
   #:use-module (gnu services shepherd)
   #:use-module (gnu services networking)
   #:use-module (gnu services ssh)
-  #:use-module (gnu services security)
   ;; System-wide packages
   #:use-module (gnu packages)
   #:use-module (gnu packages base)
@@ -103,7 +102,6 @@
 
   (services (append (list custom-keymap-service
                           (service dhcpcd-service-type)
-                          (service fail2ban-service-type)
                           (service openssh-service-type
                                    (openssh-configuration
                                      (openssh openssh-sans-x)
