@@ -31,8 +31,6 @@
   #:use-module ((gnu packages version-control)
                 #:select (git))
   ;; Imports
-  #:use-module ((buffersquid system utils)
-                #:select (get-secret))
   #:use-module ((buffersquid system website)
                 #:select (website-base-services)))
 
@@ -40,7 +38,7 @@
 (define %non-encrypted-disk-label "guix")
 (define %boot-target "/boot/efi")
 (define %device-partition-efi  "/dev/sda1")
-(define %username (get-secret 'username "user"))
+(define %username "squid")
 
 (define custom-keymap-service
   (simple-service 'custom-keymap-service shepherd-root-service-type
@@ -105,7 +103,6 @@
                           (service openssh-service-type
                                    (openssh-configuration
                                      (openssh openssh-sans-x)
-                                     (port-number (get-secret 'ssh-port 22))
                                      (authorized-keys
                                        `((,%username ,(local-file "./configs/ssh.pub"))))
                                      (permit-root-login #f)
