@@ -1,3 +1,5 @@
+(use-modules (guix channels))
+
 (append
   (list (channel
           (name 'buffersquid)
