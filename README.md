@@ -4,8 +4,8 @@
 Append the following sexp into whatever channel list you use.
 ```
 (channel
-  (name 'buffersquid-guix)
-  (url "https://github.com/buffersquid/buffersquid-guix.git")
+  (name 'buffersquid)
+  (url "https://github.com/buffersquid/guix.git")
   (branch "main")
   (introduction
     (make-channel-introduction
