@@ -3,7 +3,7 @@
   #:use-module (guix git-download)
   #:use-module (guix build-system trivial)
   #:use-module ((guix licenses) #:prefix license:)
-  #:use-module (buffersquid packages zola)
+  #:use-module (gnu packages rust-apps)
   #:export (website))
 
 (define-public website
