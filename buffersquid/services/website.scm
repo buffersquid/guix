@@ -1,4 +1,4 @@
-(define-module (buffersquid system website)
+(define-module (buffersquid services website)
   #:use-module (guix gexp)
   #:use-module (gnu services)
   #:use-module (gnu services shepherd)

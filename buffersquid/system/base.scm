@@ -33,7 +33,7 @@
   #:use-module ((gnu packages version-control)
                 #:select (git))
   ;; Imports
-  #:use-module ((buffersquid system website)
+  #:use-module ((buffersquid services website)
                 #:select (website-base-services)))
 
 
