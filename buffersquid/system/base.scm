@@ -33,6 +33,7 @@
   #:use-module ((gnu packages version-control)
                 #:select (git))
   ;; Imports
+  #:use-module (buffersquid services minecraft)
   #:use-module ((buffersquid services website)
                 #:select (website-base-services)))
 
@@ -111,7 +112,8 @@
                                        `((,%username ,(local-file "./configs/ssh.pub"))))
                                      (permit-root-login #f)
                                      (allow-empty-passwords? #f)
-                                     (password-authentication? #f))))
+                                     (password-authentication? #f)))
+                          (service minecraft-server-service-type))
                     website-base-services
                     %base-services))
 
