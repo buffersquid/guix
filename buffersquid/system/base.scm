@@ -1,10 +1,12 @@
 (define-module (buffersquid system base)
+  #:use-module (buffersquid services website)
   #:use-module (gnu bootloader grub)
   #:use-module (gnu bootloader)
   #:use-module (gnu packages base)
   #:use-module (gnu packages linux)
   #:use-module (gnu packages)
   #:use-module (gnu services base)
+  #:use-module (gnu services networking)
   #:use-module (gnu services shepherd)
   #:use-module (gnu services)
   #:use-module (gnu system file-systems)
@@ -45,7 +47,11 @@
                       (check? #f))
                     %base-file-systems))
 
-  (services (append (list custom-keymap-service)
-                    %base-services))
+    (services (append
+                (list
+                  custom-keymap-service
+                  (service dhcpcd-service-type))
+                website-base-services
+                %base-services))
 
   (packages %base-packages)))

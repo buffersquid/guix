@@ -3,9 +3,6 @@
   #:use-module (buffersquid system base)
   #:use-module (gnu bootloader grub)
   #:use-module (gnu bootloader)
-  #:use-module (gnu packages base)
-  #:use-module (gnu packages)
-  #:use-module (gnu services networking)
   #:use-module (gnu services)
   #:use-module (gnu system file-systems)
   #:use-module (gnu system keyboard)
@@ -62,11 +59,4 @@
                 (name "squid")
                 (group "users")
                 (supplementary-groups '("wheel")))
-               %base-user-accounts))
-
-  (services (append (operating-system-user-services base-operating-system)
-                    (list (service dhcpcd-service-type))
-                    website-base-services))
-
-  (packages (append (operating-system-packages base-operating-system) (list))))
-
+               %base-user-accounts)))
