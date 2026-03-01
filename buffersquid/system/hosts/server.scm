@@ -54,7 +54,6 @@
      (target "/swapfile")
      (dependencies file-systems))))
 
-
   (users (cons (user-account
                 (name "squid")
                 (group "users")

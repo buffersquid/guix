@@ -1,4 +1,5 @@
 (define-module (buffersquid system base)
+  #:use-module (buffersquid services minecraft-server)
   #:use-module (buffersquid services website)
   #:use-module (gnu bootloader grub)
   #:use-module (gnu bootloader)
@@ -50,7 +51,8 @@
     (services (append
                 (list
                   custom-keymap-service
-                  (service dhcpcd-service-type))
+                  (service dhcpcd-service-type)
+                  (service minecraft-server-service-type))
                 website-base-services
                 %base-services))
 
