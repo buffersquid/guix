@@ -1,5 +1,5 @@
 (define-module (buffersquid system base)
-  #:use-module (buffersquid services minecraft-server)
+  #:use-module (buffersquid services minecraft)
   #:use-module (buffersquid services website)
   #:use-module (gnu bootloader grub)
   #:use-module (gnu bootloader)
