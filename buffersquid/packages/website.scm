@@ -14,8 +14,8 @@
           (method git-fetch)
           (file-name (git-file-name name version))
           (uri (git-reference (url "https://github.com/buffersquid/website.git")
-                              (commit "a57066b54a42e9fabe73f6c6d373000d380aa9d3")))
-          (sha256 (base32 "0p1amg7bh0j17ny0hli75p0lv1lnkxsl9g4snjk1yapqbkvwlfgh"))))
+                              (commit "674c1fd935f527de007548b76a05e2bb17e2df42")))
+          (sha256 (base32 "1w9lw3dpnlj75qw3zfqyvba154q1hw5s70wc71q9zchc21xrkn6z"))))
     (native-inputs (list zola))
     (build-system trivial-build-system)
     (arguments
