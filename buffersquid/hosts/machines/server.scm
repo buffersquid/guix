@@ -20,7 +20,7 @@
     (inherit
       (case target
         ((vm) (with-vm-disk %buffersquid-core-os #:host-name "server"))
-        (else (with-luks-efi-disk %buffersquid-core-os
+        (else (with-efi-disk %buffersquid-core-os
                 #:host-name "server"
                 #:disk-uuid "c234209b-4e12-46cd-acaa-5d06ad1e7641"
                 #:efi-partition "/dev/sda1"
