@@ -13,3 +13,17 @@ Append the following sexp into whatever channel list you use.
       (openpgp-fingerprint
         "A3DE DE93 731C B351 C891  0815 E75A 2784 63DF 3FB2"))))
 ```
+
+
+## Hosts
+Each machine lives at `buffersquid/hosts/machines/<host>.scm` and exports
+a `<host>-os` procedure taking `#:target 'hardware` (default) or `#:target
+'vm`. `base.scm` holds what's common to every machine; `platforms.scm`
+holds reusable disk/bootloader recipes (LUKS+EFI, plain EFI, VM). Adding
+a new machine means writing a new `<host>.scm` that combines the two —
+no new disk/boot boilerplate required.
+
+## Scripts
+- `scripts/vm.sh <host>` — builds and runs `<host>`'s `'vm` target in
+  QEMU. Run `scripts/vm.sh --help` for usage and a list of available
+  hosts.
