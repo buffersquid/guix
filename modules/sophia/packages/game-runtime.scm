@@ -76,7 +76,7 @@ exec wine \"$EXE\" \"$@\"
 
     (inputs (list bash-minimal))
 
-    (propagated-inputs (list (replace-mesa wine
+    (propagated-inputs (list (replace-mesa wine64
                                            #:driver %nvidia-driver)))
 
     (home-page "https://github.com/buffersquid/sophia")

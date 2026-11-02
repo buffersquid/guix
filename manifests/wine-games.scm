@@ -5,7 +5,7 @@
              (sophia config))
 
 (define wine-game-packages
-  (list wine xwayland-satellite xrandr))
+  (list wine64 xwayland-satellite xrandr))
 
 (packages->manifest (append (map (lambda (package
                                            )
