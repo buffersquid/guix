@@ -5,7 +5,7 @@
   #:use-module (guix gexp)
   #:use-module (guix utils)
   #:use-module (guix packages)
-  #:use-module ((suika-chan packages spotify)
+  #:use-module ((suika-chan packages music)
                 #:prefix suika:))
 
 (define-public spotify
