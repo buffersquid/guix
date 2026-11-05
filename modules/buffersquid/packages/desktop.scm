@@ -1,4 +1,4 @@
-(define-module (sophia packages desktop)
+(define-module (buffersquid packages desktop)
   #:use-module (guix gexp)
   #:use-module (guix packages)
   #:use-module (guix build-system trivial)
@@ -10,7 +10,7 @@
   #:use-module (gnu packages terminals)
   #:use-module (gnu packages music)
   #:use-module (nongnu packages nvidia)
-  #:use-module (sophia config))
+  #:use-module (buffersquid config))
 
 (define-public niri-desktop
   (package
@@ -36,5 +36,5 @@
     (synopsis "Niri Wayland desktop environment")
     (description
      "A practical desktop environment built around the Niri Wayland compositor and noctalia")
-    (home-page "https://github.com/buffersquid/sophia")
+    (home-page "https://github.com/buffersquid/buffersquid")
     (license gpl3+)))

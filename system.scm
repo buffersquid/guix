@@ -4,7 +4,7 @@
              (nongnu packages nvidia)
              (nongnu system linux-initrd)
              (nonguix transformations)
-             (sophia config))
+             (buffersquid config))
 (use-service-modules cups
                      desktop
                      networking

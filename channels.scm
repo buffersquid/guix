@@ -1,6 +1,6 @@
 (cons* (channel
-         (name 'sophia)
-         (url "https://github.com/buffersquid/sophia")
+         (name 'buffersquid)
+         (url "https://github.com/buffersquid/guix")
          (branch "main")
          (introduction
           (make-channel-introduction

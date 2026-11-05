@@ -2,7 +2,7 @@
              (gnu packages wine)
              (gnu packages xorg)
              (nongnu packages nvidia)
-             (sophia config))
+             (buffersquid config))
 
 (define wine-game-packages
   (list wine64 xwayland-satellite xrandr))

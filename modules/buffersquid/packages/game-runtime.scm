@@ -1,4 +1,4 @@
-(define-module (sophia packages game-runtime)
+(define-module (buffersquid packages game-runtime)
   #:use-module (guix gexp)
   #:use-module (guix packages)
   #:use-module (guix licenses)
@@ -6,7 +6,7 @@
   #:use-module (gnu packages bash)
   #:use-module (gnu packages wine)
   #:use-module (nongnu packages nvidia)
-  #:use-module (sophia config))
+  #:use-module (buffersquid config))
 
 (define run-wine-game-script
   (plain-file "run-wine-game"
@@ -79,7 +79,7 @@ exec wine \"$EXE\" \"$@\"
     (propagated-inputs (list (replace-mesa wine64
                                            #:driver %nvidia-driver)))
 
-    (home-page "https://github.com/buffersquid/sophia")
+    (home-page "https://github.com/buffersquid/buffersquid")
     (synopsis "Launch Windows games with Wine")
     (description "A reusable Wine game launcher for Guix and Niri.")
     (license gpl3+)))

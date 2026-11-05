@@ -1,24 +1,26 @@
 (use-modules (guix gexp)
+             (gnu home services desktop)
+             (gnu home services gnupg)
+             (gnu home services shells)
+             (gnu home services sound)
+             (gnu home services ssh)
              (gnu home)
+             (gnu packages electronics)
+             (gnu packages engineering)
+             (gnu packages game-development)
+             (gnu packages gnupg)
+             (gnu packages ssh)
+             (gnu packages tmux)
+             (gnu packages version-control)
+             (gnu packages vim)
              (gnu packages)
              (gnu services)
-             (sophia config)
-             (gnu packages vim)
-             (gnu packages tmux)
-             (gnu packages ssh)
-             (gnu packages version-control)
-             (gnu packages gnupg)
-             (gnu packages game-development)
              (nongnu packages mozilla)
              (nongnu packages nvidia)
-             (sophia packages desktop)
-             (sophia packages music)
-             (sophia packages game-runtime)
-             (gnu home services gnupg)
-             (gnu home services ssh)
-             (gnu home services sound)
-             (gnu home services desktop)
-             (gnu home services shells))
+             (buffersquid config)
+             (buffersquid packages desktop)
+             (buffersquid packages game-runtime)
+             (buffersquid packages music))
 
 (home-environment
   (packages (list niri-desktop
@@ -29,6 +31,8 @@
                   gnupg
                   (replace-mesa firefox
                                 #:driver %nvidia-driver)
+                  freecad
+                  kicad
                   wine-game-runner
                   openmw
                   spotify))

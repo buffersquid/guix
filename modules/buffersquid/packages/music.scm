@@ -1,7 +1,7 @@
 ;;; GNU Guix --- Functional package management for GNU
 ;;; Copyright © 2026
 
-(define-module (sophia packages music)
+(define-module (buffersquid packages music)
   #:use-module (guix gexp)
   #:use-module (guix utils)
   #:use-module (guix packages)

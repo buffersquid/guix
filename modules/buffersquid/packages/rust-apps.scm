@@ -1,4 +1,4 @@
-(define-module (sophia packages rust-apps)
+(define-module (buffersquid packages rust-apps)
   #:use-module (guix gexp)
   #:use-module (guix packages)
   #:use-module (guix download)
@@ -6,7 +6,7 @@
   #:use-module (guix build-system cargo)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (sophia packages rust-crates)
+  #:use-module (buffersquid packages rust-crates)
   #:use-module (gnu packages rust)
   #:export (kdlfmt))
 
@@ -37,7 +37,7 @@
                         (find-files "guix-vendor"
                                     "\\.(a|dll|dylib|exe|lib|o|so)$")) #t)))))
     (inputs (cargo-inputs 'kdlfmt
-                          #:module '(sophia packages rust-crates)))
+                          #:module '(buffersquid packages rust-crates)))
     (home-page "https://github.com/hougesen/kdlfmt")
     (synopsis "KDL document formatter")
     (description

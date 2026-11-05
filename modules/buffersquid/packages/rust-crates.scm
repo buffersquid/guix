@@ -1,4 +1,4 @@
-(define-module (sophia packages rust-crates)
+(define-module (buffersquid packages rust-crates)
   #:use-module (gnu packages)
   #:use-module (guix gexp)
   #:use-module (guix packages)
