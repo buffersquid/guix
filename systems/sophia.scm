@@ -37,7 +37,7 @@
                     (group "users")
                     (home-directory "/home/nous")
                     (supplementary-groups '("wheel" "netdev" "audio" "video"
-                                            "input"))) %base-user-accounts))
+                                            "input" "kvm"))) %base-user-accounts))
 
     (bootloader (bootloader-configuration
                   (bootloader grub-efi-bootloader)
@@ -72,7 +72,7 @@
                             (elogind-configuration (handle-power-key 'suspend)
                                                    (system-sleep-hook-files (list
                                                                              (local-file
-                                                                              "files/scripts/nvidia-sleep-hook")))))
+                                                                              "../files/scripts/nvidia-sleep-hook")))))
                    (service pcscd-service-type)
                    (simple-service 'x11-unix-directory activation-service-type
                                    #~(begin
