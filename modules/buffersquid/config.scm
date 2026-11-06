@@ -3,4 +3,4 @@
   #:export (%nvidia-driver))
 
 (define %nvidia-driver
-  nvda-595)
+  nvda-620)
