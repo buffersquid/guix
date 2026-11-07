@@ -20,7 +20,7 @@
              (buffersquid config)
              (buffersquid packages desktop)
              (buffersquid packages game-runtime)
-             (buffersquid packages music))
+             (suika-chan packages music))
 
 (home-environment
   (packages (list niri-desktop
