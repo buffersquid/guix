@@ -1,10 +1,11 @@
 (use-modules (gnu)
+             (buffersquid config)
              (gnu services)
+             (gnu system file-systems)
              (nongnu packages linux)
              (nongnu packages nvidia)
              (nongnu system linux-initrd)
-             (nonguix transformations)
-             (buffersquid config))
+             (nonguix transformations))
 (use-service-modules cups
                      desktop
                      networking
@@ -15,6 +16,19 @@
 (define nongnu-key
   (plain-file "non-guix.pub"
    "(public-key (ecc (curve Ed25519) (q #C1FD53E5D4CE971933EC50C9F307AE2171A2D3B52C804642A7A35F84F3A4EA98#)))"))
+
+(define %mapped-devices
+  (list (mapped-device
+          (source (uuid "7dbeb462-6740-421f-8681-464c32af17f9"))
+          (target "cryptroot")
+          (type luks-device-mapping))))
+
+(define %root-file-system
+  (file-system
+    (mount-point "/")
+    (device "/dev/mapper/cryptroot")
+    (type "ext4")
+    (dependencies %mapped-devices)))
 
 (define %base-os
   (operating-system
@@ -37,28 +51,25 @@
                     (group "users")
                     (home-directory "/home/nous")
                     (supplementary-groups '("wheel" "netdev" "audio" "video"
-                                            "input" "kvm"))) %base-user-accounts))
+                                            "input" "kvm")))
+                  %base-user-accounts))
 
     (bootloader (bootloader-configuration
                   (bootloader grub-efi-bootloader)
                   (targets (list "/boot/efi"))
                   (keyboard-layout keyboard-layout)))
-    (mapped-devices (list (mapped-device
-                            (source (uuid
-                                     "7dbeb462-6740-421f-8681-464c32af17f9"))
-                            (target "cryptroot")
-                            (type luks-device-mapping))))
+
+    (mapped-devices %mapped-devices)
 
     (file-systems (cons* (file-system
                            (mount-point "/boot/efi")
                            (device (uuid "5CFE-F441"
                                          'fat32))
-                           (type "vfat"))
-                         (file-system
-                           (mount-point "/")
-                           (device "/dev/mapper/cryptroot")
-                           (type "ext4")
-                           (dependencies mapped-devices)) %base-file-systems))
+                           (type "vfat")) %root-file-system %base-file-systems))
+
+    (swap-devices (list (swap-space
+                          (target "/swapfile")
+                          (dependencies (list %root-file-system)))))
 
     (services
      (append (list (simple-service 'nonguix-substitutes guix-service-type
