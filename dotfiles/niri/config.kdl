@@ -58,6 +58,8 @@ layout {
     }
 }
 spawn-at-startup "noctalia"
+spawn-at-startup "wlsunset" "-l" "37.8" "-L" "-122.4" "-t" "4000" "-T" "6500"
+
 hotkey-overlay {
     skip-at-startup
 }

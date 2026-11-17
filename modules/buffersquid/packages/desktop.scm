@@ -32,6 +32,7 @@
                              fuzzel
                              wl-clipboard
                              wireplumber
+                             wlsunset
                              playerctl))
     (synopsis "Niri Wayland desktop environment")
     (description
