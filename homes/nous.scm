@@ -19,6 +19,7 @@
              (nongnu packages nvidia)
              (buffersquid config)
              (buffersquid packages desktop)
+             (buffersquid packages ai)
              (buffersquid packages game-runtime)
              (suika-chan packages music))
 
@@ -35,7 +36,8 @@
                   kicad
                   wine-game-runner
                   openmw
-                  spotify))
+                  spotify
+                  codex))
 
   (services
    (append (list (service home-bash-service-type
